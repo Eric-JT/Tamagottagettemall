@@ -1,6 +1,6 @@
 namespace Tamagottagettemall
 {
-    class Food
+    class Player
     {
         
     }
