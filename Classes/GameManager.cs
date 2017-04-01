@@ -21,6 +21,7 @@ namespace Tamagottagettemall
         public static void StartGame()
         {
             // ring the pet to life
+            Game.InitializePetRoom();
         }
 
         public static void EndGame(string endingText)

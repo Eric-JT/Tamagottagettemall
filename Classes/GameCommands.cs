@@ -37,54 +37,35 @@ namespace Tamagottagettemall
             // store all remaing words in the string to sArguments, remove whitespace and lower case
             string sArguments = GetArgument(sPlayerInput.Trim()).Trim().ToLower();
 
-            // check if the commands are valid
-            if (Cave.IsValidDirection(sCommand))
-            {
-                // move the player
-            }
-            else
-            {
-                // reun the specified command
-                switch (sCommand)
-                {
-                    case "exit":
-                        Program.quit = true;
-                        return;
-                    case "help":
-                        ShowHelp();
-                        break;
-                 /*   case "move":
-                        // move the player towards the given direction, increment or decrement player x and y 
-                        Player.Move(sArguments);
-                        break;
-                    case "look":
-                        // get the location of the play, check it against locations of caves
-                        // return information for that cave
-                        Player.GetCurrentCave().DescribeCave();
-                        break;
-                    case "pickup":
-                        // check if item in cave, remove item from cave, add item to inventory
-                        Player.PickupItem(sArguments);
-                        break;
-                    case "drop":
-                        // check if item in inventory, remove item from inventory, add item to cave
-                        Player.DropItem(sArguments);
-                        break;
-                    case "inventory":
-                        // display all items in inventory
-                        Player.DisplayInventory();
-                        break;
-                    case "whereami":
-                        // get the location of the play, check it against locations of caves
-                        // return information for that cave
-                        Player.GetCurrentCave().ShowTitle();
-                        break;
-                */
-                }
-            }
-
-            // apply the game rules
             
+            switch (sCommand) {
+                case "exit":
+                    Program.quit = true;
+                    return;
+                case "help":
+                    ShowHelp();
+                    break;  
+                case "look":
+                    // return information for the pet room
+                    Player.GetCurrentRoom().DescribePetRoom();
+                    break;
+                case "pickup":
+                    // check if item on shelf, remove item from shelf, add item to inventory
+                    Player.PickupItem(sArguments);
+                    break;
+                case "drop":
+                    // check if item in inventory, remove item from inventory, add item to shelf
+                    Player.DropItem(sArguments);
+                    break;
+                case "inventory":
+                    // display all items in inventory
+                    Player.DisplayInventory();
+                    break;
+                default:
+                    Console.WriteLine("Invalid Command!");
+                    break;
+            }
+            // apply the game rules  
         }
 
         public static void ShowHelp()
@@ -93,11 +74,10 @@ namespace Tamagottagettemall
             Console.WriteLine("List of commands");
             Console.WriteLine("help");
             Console.WriteLine("exit");
-            Console.WriteLine("look");
-            Console.WriteLine("pickup");
-            Console.WriteLine("drop");
-            Console.WriteLine("inventory");
-            Console.WriteLine("wheremai");
+            Console.WriteLine("look"); // describe pet
+            Console.WriteLine("pickup"); // pick up objects to use on pet
+            Console.WriteLine("drop");  // drop objects
+            Console.WriteLine("inventory"); // see whats in inventory
         }
     }
 }
