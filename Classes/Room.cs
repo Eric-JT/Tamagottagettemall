@@ -19,12 +19,8 @@ namespace Tamagottagettemall
         public List<Items> Items
         {
             // store and retrieve item names 
-            get {
-                return m_listItems;
-            }
-            set {
-                m_listItems = value;
-            }
+            get { return m_listItems; }
+            set { m_listItems = value; }
         }
 
         public Room(){
@@ -37,24 +33,16 @@ namespace Tamagottagettemall
         public string sRoomTitle
         {
             // store or retrieve cave title
-            get {
-                return m_sRoomTitle;
-            }
-            set {
-                m_sRoomTitle = value;
-            }
+            get { return m_sRoomTitle; }
+            set { m_sRoomTitle = value; }
         }
 
         /* * * Room Description * * */
         public string sDescription
         {
             // store or retrieve cave description
-            get {
-                return m_sRoomDescription;
-            }
-            set {
-                m_sRoomDescription = value;
-            }
+            get { return m_sRoomDescription; }
+            set { m_sRoomDescription = value; }
         }
 
         /* * * Room Description More detail * * */
@@ -71,10 +59,10 @@ namespace Tamagottagettemall
             // check each item in the Rooms
             // if the item is in the room return that item
             // else return nothing
-            foreach (Items item in this.m_listItems)
-            {
-                if (item.sTitle.ToLower() == itemName.ToLower())
+            foreach (Items item in this.m_listItems) {
+                if (item.sTitle.ToLower() == itemName.ToLower()) {
                     return item;
+                }
             }
             return null;
         }
@@ -90,15 +78,11 @@ namespace Tamagottagettemall
             // add each item to item list
             // return the list of items
             // else return none
-            if (this.m_listItems.Count > 0)
-            {
-                foreach (Items item in this.m_listItems)
-                {
+            if (this.m_listItems.Count > 0) {
+                foreach (Items item in this.m_listItems) {
                     sItem += "\n[" + item.sTitle + "]";
                 }
-            }
-            else
-            {
+            }else {
                 sItem = "\n<none>";
             }
 

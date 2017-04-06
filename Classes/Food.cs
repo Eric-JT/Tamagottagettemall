@@ -1,7 +1,0 @@
-namespace Tamagottagettemall
-{
-    class Food
-    {
-        
-    }
-}

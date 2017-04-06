@@ -8,21 +8,22 @@ namespace Tamagottagettemall
         private string m_sTitle;
         // store text to display when picking item up
         private string m_sPickupText;
-        // store weight of item
-        private int m_iWeight = 1;
-
-        public int iWeight
-        {
-            // get and set the weight of items
-            get { return m_iWeight; }
-            set { m_iWeight = value; }
-        }
+        // description of item
+        private string m_sItemDescription;
+        
 
         public string sPickupText
         {
             // get and set the pick up text for items
             get { return m_sPickupText; }
             set { m_sPickupText = value; }
+        }
+
+        public string sItemDescription
+        {
+            // get and set description for items
+            get { return m_sItemDescription; }
+            set { m_sItemDescription = value; }
         }
 
         public string sTitle
